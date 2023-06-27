@@ -25,16 +25,20 @@ public class Duplicatelead {
 		driver.findElement(By.name("description")).sendKeys(" Automation");
 		driver.findElement(By.name("primaryEmail")).sendKeys(" Joseph75@gmail.com");
 		driver.findElement(By.xpath("//input[@class='smallSubmit']")).click();
-		String title=driver.getTitle();
+		
 		
 		driver.findElement(By.linkText("Duplicate Lead")).click();
-		//clear function guide
-		WebElement a=driver.findElement(By.id("UpdateLeadForm_companyName"));
+		//clear function 
+		WebElement a=driver.findElement(By.id("createLeadForm_companyName"));
+		
 			a.clear();
-			a.sendKeys("");
+			a.sendKeys("testservices");
+			driver.findElement(By.name("submitButton")).click();
 		
-		
-		
+			String title=driver.getTitle();
+		   System.out.println("title");
+		   
+		   driver.close();
 		
 
 	}
